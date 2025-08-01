@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering CSS Grid for Modern Web Layouts | The Green Coder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">The Green Coder</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Speaking</a></li>
+                    <li><a href="#">Subscribe</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="search" name="q" placeholder="Search..." aria-label="Search">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="full-post">
+            <header class="post-header">
+                <h1 class="post-title">Mastering CSS Grid for Modern Web Layouts</h1>
+                <div class="post-meta">
+                    <span>Published on <time datetime="2023-10-27">October 27, 2023</time></span>
+                    <div class="post-categories">
+                        <span>Categories:</span>
+                        <ul>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">Frontend</a></li>
+                            <li><a href="#">Tutorial</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content">
+                <p>CSS Grid is a two-dimensional layout system for the web. It lets you lay content out in rows and columns, and has many features that make building complex layouts straightforward. It's a powerful tool that, once mastered, will fundamentally change how you approach CSS layouts.</p>
+                
+                <p>Unlike Flexbox, which is largely a one-dimensional system, Grid is two-dimensional. This means it can handle both columns and rows at the same time, which is perfect for website layouts, as opposed to just component layouts.</p>
+
+                <h3>Getting Started with `display: grid`</h3>
+                <p>To start using Grid, you need a container element. You apply `display: grid` to this container, and then you can define your columns and rows.</p>
+
+<pre><code class="language-css">.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal-width columns */
+  grid-template-rows: auto; /* Row height based on content */
+  gap: 20px; /* Space between grid items */
+}</code></pre>
+
+                <p>In the example above, `grid-template-columns` defines the track sizing of the grid columns. The `fr` unit is a fractional unit, and `1fr` for each column means they will each take up an equal share of the available space.</p>
+
+                <h3>Positioning Items</h3>
+                <p>You can explicitly place items on the grid using `grid-column-start`, `grid-column-end`, `grid-row-start`, and `grid-row-end`, or the shorthand properties `grid-column` and `grid-row`.</p>
+
+<pre><code class="language-css">.grid-item-1 {
+  grid-column: 1 / 3; /* Span from column line 1 to 3 */
+  grid-row: 1;        /* Place in the first row */
+}</code></pre>
+
+                <p>This level of control is what makes Grid so powerful for creating layouts that were previously difficult to achieve with CSS, often requiring complex workarounds or JavaScript.</p>
+
+                <p>We've only scratched the surface here. Dive into properties like `grid-template-areas`, `minmax()`, and `auto-fit` to unlock even more potential. Happy coding!</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 The Green Coder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
