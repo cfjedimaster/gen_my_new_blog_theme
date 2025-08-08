@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - DevBlog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DevBlog</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speaking.html">Speaking</a></li>
+                        <li><a href="subscribe.html">Subscribe</a></li>
+                        <li><a href="search.html">Search</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search posts...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content-header">
+                <h1>Search DevBlog</h1>
+                <p>Find the content you're looking for across all our articles and tutorials</p>
+            </div>
+
+            <article class="post-content">
+                <div class="search-section">
+                    <form class="search-form">
+                        <div class="search-input-group">
+                            <input type="text" id="search-query" name="q" placeholder="Enter your search terms..." class="main-search-input">
+                            <button type="submit" class="main-search-button">Search</button>
+                        </div>
+                        
+                        <div class="search-filters">
+                            <div class="filter-group">
+                                <label for="category-filter">Category:</label>
+                                <select id="category-filter" name="category">
+                                    <option value="">All Categories</option>
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="react">React</option>
+                                    <option value="python">Python</option>
+                                    <option value="devops">DevOps</option>
+                                    <option value="performance">Performance</option>
+                                    <option value="security">Security</option>
+                                    <option value="typescript">TypeScript</option>
+                                    <option value="testing">Testing</option>
+                                    <option value="database">Database</option>
+                                    <option value="api">API Design</option>
+                                    <option value="architecture">Architecture</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="date-filter">Date Range:</label>
+                                <select id="date-filter" name="date">
+                                    <option value="">All Time</option>
+                                    <option value="week">Last Week</option>
+                                    <option value="month">Last Month</option>
+                                    <option value="quarter">Last 3 Months</option>
+                                    <option value="year">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="search-results">
+                    <h2>Popular Searches</h2>
+                    <div class="popular-searches">
+                        <a href="#" class="search-tag">JavaScript Performance</a>
+                        <a href="#" class="search-tag">React Hooks</a>
+                        <a href="#" class="search-tag">Docker Tutorial</a>
+                        <a href="#" class="search-tag">TypeScript Tips</a>
+                        <a href="#" class="search-tag">API Design</a>
+                        <a href="#" class="search-tag">Web Security</a>
+                        <a href="#" class="search-tag">Database Optimization</a>
+                        <a href="#" class="search-tag">Testing Strategies</a>
+                    </div>
+
+                    <h2>Recent Articles</h2>
+                    <div class="recent-articles">
+                        <div class="search-result-item">
+                            <h3><a href="post.html">Optimizing JavaScript Performance in Modern Web Applications</a></h3>
+                            <div class="result-meta">
+                                <span class="result-date">December 15, 2024</span>
+                                <span class="result-categories">JavaScript, Performance</span>
+                            </div>
+                            <p class="result-excerpt">
+                                Discover advanced techniques for improving JavaScript performance, including code splitting, 
+                                lazy loading, and memory management strategies...
+                            </p>
+                        </div>
+
+                        <div class="search-result-item">
+                            <h3><a href="post.html">Building Scalable Data Pipelines with Python and Apache Airflow</a></h3>
+                            <div class="result-meta">
+                                <span class="result-date">December 12, 2024</span>
+                                <span class="result-categories">Python, Data Science</span>
+                            </div>
+                            <p class="result-excerpt">
+                                Learn how to create robust, scalable data pipelines using Python and Apache Airflow. 
+                                This comprehensive guide covers everything from basic DAGs...
+                            </p>
+                        </div>
+
+                        <div class="search-result-item">
+                            <h3><a href="post.html">Container Orchestration with Kubernetes: A Practical Guide</a></h3>
+                            <div class="result-meta">
+                                <span class="result-date">December 10, 2024</span>
+                                <span class="result-categories">DevOps, Docker</span>
+                            </div>
+                            <p class="result-excerpt">
+                                Master Kubernetes deployment strategies, service discovery, and scaling techniques. 
+                                This hands-on guide will help you deploy and manage...
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2>Search Tips</h2>
+                    <div class="search-tips">
+                        <ul>
+                            <li><strong>Use specific terms:</strong> Instead of "performance", try "JavaScript performance optimization"</li>
+                            <li><strong>Search by technology:</strong> Try searching for "React", "TypeScript", "Docker", etc.</li>
+                            <li><strong>Use quotes for exact phrases:</strong> "code splitting" will find exact matches</li>
+                            <li><strong>Filter by category:</strong> Use the category filter to narrow down results</li>
+                            <li><strong>Check recent articles:</strong> Use the date filter to find the latest content</li>
+                        </ul>
+                    </div>
+
+                    <h2>Browse by Category</h2>
+                    <div class="category-browser">
+                        <div class="category-card">
+                            <h3>JavaScript</h3>
+                            <p>Performance optimization, modern features, and best practices</p>
+                            <a href="#" class="category-link">Browse JavaScript Articles →</a>
+                        </div>
+                        
+                        <div class="category-card">
+                            <h3>React</h3>
+                            <p>Hooks, patterns, and advanced React development</p>
+                            <a href="#" class="category-link">Browse React Articles →</a>
+                        </div>
+                        
+                        <div class="category-card">
+                            <h3>DevOps</h3>
+                            <p>Docker, Kubernetes, CI/CD, and infrastructure</p>
+                            <a href="#" class="category-link">Browse DevOps Articles →</a>
+                        </div>
+                        
+                        <div class="category-card">
+                            <h3>Performance</h3>
+                            <p>Web performance optimization and monitoring</p>
+                            <a href="#" class="category-link">Browse Performance Articles →</a>
+                        </div>
+                        
+                        <div class="category-card">
+                            <h3>Security</h3>
+                            <p>Web security best practices and vulnerability prevention</p>
+                            <a href="#" class="category-link">Browse Security Articles →</a>
+                        </div>
+                        
+                        <div class="category-card">
+                            <h3>Career</h3>
+                            <p>Developer career growth and skill development</p>
+                            <a href="#" class="category-link">Browse Career Articles →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DevBlog. All rights reserved. | Built with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

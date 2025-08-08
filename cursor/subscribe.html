@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - DevBlog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DevBlog</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speaking.html">Speaking</a></li>
+                        <li><a href="subscribe.html">Subscribe</a></li>
+                        <li><a href="search.html">Search</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search posts...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content-header">
+                <h1>Subscribe to DevBlog</h1>
+                <p>Stay updated with the latest insights, tutorials, and developer resources</p>
+            </div>
+
+            <article class="post-content">
+                <h2>Why Subscribe?</h2>
+                <p>
+                    Join thousands of developers who get weekly insights, tutorials, and updates 
+                    delivered directly to their inbox. Here's what you'll receive:
+                </p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>📝 Weekly Blog Posts</h3>
+                        <p>Get notified about new articles covering JavaScript, React, DevOps, and more</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🎯 Exclusive Content</h3>
+                        <p>Access to subscriber-only tutorials, code samples, and deep-dive guides</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🚀 Performance Tips</h3>
+                        <p>Weekly performance optimization tips and best practices</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>📅 Speaking Updates</h3>
+                        <p>Stay informed about upcoming speaking engagements and events</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>💡 Career Advice</h3>
+                        <p>Insights on developer career growth and skill development</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🔧 Tool Recommendations</h3>
+                        <p>Curated list of the best development tools and resources</p>
+                    </div>
+                </div>
+
+                <h2>What Our Subscribers Say</h2>
+                <div class="testimonials">
+                    <blockquote>
+                        "The weekly newsletter has become my go-to resource for staying current with 
+                        web development trends. The practical tips have saved me hours of debugging time!"
+                        <cite>- Sarah Chen, Senior Frontend Developer</cite>
+                    </blockquote>
+                    
+                    <blockquote>
+                        "I've been following the blog for months, and the performance optimization 
+                        tips have dramatically improved our application's speed. Highly recommended!"
+                        <cite>- Mike Rodriguez, Tech Lead</cite>
+                    </blockquote>
+                    
+                    <blockquote>
+                        "The exclusive content for subscribers is gold. The deep-dive tutorials 
+                        have helped me level up my React skills significantly."
+                        <cite>- Alex Thompson, Full-Stack Developer</cite>
+                    </blockquote>
+                </div>
+
+                <h2>Subscribe Now</h2>
+                <p>
+                    Ready to join our community? Fill out the form below to start receiving 
+                    weekly updates and exclusive content.
+                </p>
+
+                <form class="subscribe-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Primary Role</label>
+                        <select id="role" name="role">
+                            <option value="">Select your role</option>
+                            <option value="frontend">Frontend Developer</option>
+                            <option value="backend">Backend Developer</option>
+                            <option value="fullstack">Full-Stack Developer</option>
+                            <option value="devops">DevOps Engineer</option>
+                            <option value="student">Student</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests">Topics of Interest</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="javascript"> JavaScript
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="react"> React
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="performance"> Performance
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="devops"> DevOps
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="security"> Security
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="career"> Career Development
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy" required>
+                            I agree to receive email updates and understand that I can unsubscribe at any time
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="subscribe-button">Subscribe to Newsletter</button>
+                </form>
+
+                <h2>Privacy & Unsubscribe</h2>
+                <p>
+                    Your privacy is important to us. We'll never share your email address with third parties, 
+                    and you can unsubscribe at any time by clicking the unsubscribe link in any email.
+                </p>
+
+                <ul>
+                    <li>We send emails approximately once per week</li>
+                    <li>You can unsubscribe at any time</li>
+                    <li>We respect your privacy and won't spam you</li>
+                    <li>All emails include relevant, valuable content</li>
+                </ul>
+
+                <h2>Recent Newsletter Topics</h2>
+                <p>
+                    Here's a sample of what our subscribers have been reading lately:
+                </p>
+
+                <ul>
+                    <li>"10 JavaScript Performance Tips That Actually Work"</li>
+                    <li>"Building Scalable React Applications: Lessons Learned"</li>
+                    <li>"DevOps Best Practices for Small Teams"</li>
+                    <li>"The Future of Web Development: What to Watch in 2025"</li>
+                    <li>"TypeScript Migration Guide: From JavaScript to Type Safety"</li>
+                </ul>
+
+                <p>
+                    Don't miss out on future insights! Subscribe today and join our growing community 
+                    of developers who are passionate about building better software.
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DevBlog. All rights reserved. | Built with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
