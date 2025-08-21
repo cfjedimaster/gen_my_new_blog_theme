@@ -1,0 +1,13 @@
+I want to create a new theme for my blog. My blog is developer-centric. My theme should consist of one main HTML file, one CSS file, and minimal if any JavaScript. (You can create an empty JS file and include it though if you wish.)
+
+Absolutely NO framework must be used. Absolutely no React, or Vue, or anything, and no build process. I literally just want static HTML and CSS. 
+
+I want a dark green centric theme as green is my favorite color. 
+
+The theme should be responsive and look on mobile devices.
+
+The main page you create should include a title for the blog and 10 blog entries listed in reverse chronological order. Each blog post should include a date.
+
+The top level menu should include a links to: Home, About, Speaking (I'm a frequent speaker at conferences), Subscribe. You can also include a link to a search page, or perhaps a small search field. 
+
+Finally, using this template, create a page for an individual blog post. That template should include a date and a list of categories associated with the blog post. 
