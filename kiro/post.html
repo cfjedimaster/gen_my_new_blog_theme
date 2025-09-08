@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Scalable APIs with Node.js - DevBlog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="/">DevBlog</a></h1>
+                <p class="tagline">Code, Coffee & Conferences</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/speaking">Speaking</a></li>
+                    <li><a href="/subscribe">Subscribe</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="Search posts..." id="search">
+                    <button type="button">🔍</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <article class="post-content">
+                <header class="post-header">
+                    <h1>Building Scalable APIs with Node.js</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-03-15">March 15, 2024</time>
+                        <span class="categories">
+                            <a href="/category/nodejs">Node.js</a>
+                            <a href="/category/api">API</a>
+                            <a href="/category/backend">Backend</a>
+                            <a href="/category/performance">Performance</a>
+                        </span>
+                    </div>
+                </header>
+
+                <div class="post-body">
+                    <p class="lead">Building scalable APIs is crucial for modern web applications. In this comprehensive guide, we'll explore how to create robust, performant APIs using Node.js and industry best practices.</p>
+
+                    <h2>Introduction</h2>
+                    <p>When building APIs that need to handle thousands of concurrent requests, scalability becomes a primary concern. Node.js, with its event-driven architecture and non-blocking I/O operations, provides an excellent foundation for building scalable APIs.</p>
+
+                    <h2>Key Principles for Scalable APIs</h2>
+                    <h3>1. Stateless Design</h3>
+                    <p>Design your APIs to be stateless. Each request should contain all the information needed to process it, without relying on server-side session state.</p>
+
+                    <pre><code>// Good: Stateless endpoint
+app.get('/api/users/:id', async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  res.json(user);
+});
+
+// Avoid: Stateful endpoints that rely on session
+app.get('/api/current-user', (req, res) => {
+  const user = req.session.user; // Relies on session state
+  res.json(user);
+});</code></pre>
+
+                    <h3>2. Implement Proper Caching</h3>
+                    <p>Use caching strategies to reduce database load and improve response times. Redis is an excellent choice for API caching.</p>
+
+                    <pre><code>const redis = require('redis');
+const client = redis.createClient();
+
+app.get('/api/posts', async (req, res) => {
+  const cacheKey = 'posts:all';
+  
+  // Try to get from cache first
+  const cached = await client.get(cacheKey);
+  if (cached) {
+    return res.json(JSON.parse(cached));
+  }
+  
+  // If not in cache, fetch from database
+  const posts = await Post.find().limit(20);
+  
+  // Cache for 5 minutes
+  await client.setex(cacheKey, 300, JSON.stringify(posts));
+  
+  res.json(posts);
+});</code></pre>
+
+                    <h3>3. Rate Limiting</h3>
+                    <p>Protect your API from abuse and ensure fair usage with rate limiting.</p>
+
+                    <pre><code>const rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP'
+});
+
+app.use('/api/', limiter);</code></pre>
+
+                    <h2>Database Optimization</h2>
+                    <p>Optimize your database queries and use connection pooling to handle multiple concurrent requests efficiently.</p>
+
+                    <h3>Connection Pooling</h3>
+                    <pre><code>const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/myapp', {
+  maxPoolSize: 10, // Maintain up to 10 socket connections
+  serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+  socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+});</code></pre>
+
+                    <h2>Error Handling and Monitoring</h2>
+                    <p>Implement comprehensive error handling and monitoring to maintain API reliability.</p>
+
+                    <pre><code>// Global error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  
+  // Log error for monitoring
+  logger.error('API Error', {
+    error: err.message,
+    stack: err.stack,
+    url: req.url,
+    method: req.method
+  });
+  
+  res.status(500).json({
+    error: 'Internal Server Error',
+    message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
+  });
+});</code></pre>
+
+                    <h2>Conclusion</h2>
+                    <p>Building scalable APIs requires careful consideration of architecture, caching, database optimization, and monitoring. By following these principles and implementing the patterns shown above, you can create APIs that handle high traffic loads while maintaining performance and reliability.</p>
+
+                    <p>Remember to always test your APIs under load and continuously monitor their performance in production. Tools like Artillery, k6, or Apache Bench can help you load test your APIs before deployment.</p>
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-navigation">
+                        <a href="/post/docker-development-workflow" class="nav-link prev">
+                            ← Previous: Docker in Development Workflow
+                        </a>
+                        <a href="/post/javascript-performance-tips" class="nav-link next">
+                            Next: JavaScript Performance Optimization →
+                        </a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DevBlog. Built with passion for clean code and great coffee.</p>
+            <div class="social-links">
+                <a href="https://github.com/[username]">GitHub</a>
+                <a href="https://twitter.com/[username]">Twitter</a>
+                <a href="https://linkedin.com/in/[username]">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
