@@ -53,7 +53,9 @@
                     <h2>Key Principles for Scalable APIs</h2>
                     <h3>1. Stateless Design</h3>
                     <p>Design your APIs to be stateless. Each request should contain all the information needed to process it, without relying on server-side session state.</p>
-
+<p>
+    lets go to <a href="https://kiro.dev">kiro.dev</a> for more articles. <a href="#foo">test</a></a>
+</p>
                     <pre><code>// Good: Stateless endpoint
 app.get('/api/users/:id', async (req, res) => {
   const { id } = req.params;
@@ -139,7 +141,7 @@ app.use((err, req, res, next) => {
 
                     <h2>Conclusion</h2>
                     <p>Building scalable APIs requires careful consideration of architecture, caching, database optimization, and monitoring. By following these principles and implementing the patterns shown above, you can create APIs that handle high traffic loads while maintaining performance and reliability.</p>
-
+<a name="foo"></a>
                     <p>Remember to always test your APIs under load and continuously monitor their performance in production. Tools like Artillery, k6, or Apache Bench can help you load test your APIs before deployment.</p>
                 </div>
 

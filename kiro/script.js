@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add loading states for external links
     document.querySelectorAll('a[href^="http"]').forEach(link => {
         link.addEventListener('click', function() {
+            console.log('Navigating to external link:', this.href);
             this.style.opacity = '0.7';
             setTimeout(() => {
                 this.style.opacity = '1';
